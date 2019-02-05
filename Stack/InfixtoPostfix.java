@@ -9,6 +9,50 @@ public class InfixtoPostfix
 		System.out.println("Enter the infix expression ");
 		String input=sc.nextLine();
 		convertToPostfix(input);
+		System.out.println("Enter the postfix Expression to evaluate");
+		String postfix=sc.nextLine();
+		System.out.println(evaluatePostfix(postfix));
+	}
+
+	public static String evaluatePostfix(String postfix)
+	{
+		ArrayStack s=new ArrayStack(postfix.length());
+		for(int i=0;i<postfix.length();i++)
+		{
+			char c=postfix.charAt(i);
+			if(Character.isDigit(c))
+			{
+				s.push(c);
+			}
+			else 
+			{
+				int op2=Integer.parseInt((s.pop()).toString());
+				int op1=Integer.parseInt((s.pop()).toString());
+				if(c=='+')
+				{
+					int op3=op1+op2;
+					s.push(op3);
+				}				
+				else if(c=='-')
+				{
+					int op3=op1-op2;
+					s.push(op3);
+				}				
+				else if(c=='*')
+				{				
+					int op3=op1*op2;
+					s.push(op3);
+				}
+				else if(c=='/')
+				{
+					int op3=op1/op2;
+					s.push(op3);
+				}
+				else
+					s.push(c);				
+			}
+		}
+		return (s.top()).toString();
 	}
 	
 	public static void convertToPostfix(String input)
@@ -39,7 +83,7 @@ public class InfixtoPostfix
 						 s.top().toString().charAt(0)=='/' || s.top().toString().charAt(0)=='+' ||
 						s.top().toString().charAt(0)=='-') )
 					{
-						System.out.print(s.pop());
+					 	System.out.print(s.pop());
 					}
 					s.push(c);
 					
