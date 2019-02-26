@@ -10,6 +10,7 @@ public class Palindrome
 		String input=sc.nextLine();
 		System.out.println(palin1(input));
 		System.out.println(palin2(input));
+		System.out.println(palin3(input));
 	}
 
 
@@ -29,6 +30,31 @@ public class Palindrome
 		else
 			return false;
 
+	}
+
+
+	//Paindrome using stacks
+
+	public static boolean palin3(String input)
+	{	
+		int s_size=input.length();
+		ArrayStack s=new ArrayStack(s_size);
+		char[] a = input.toCharArray();
+		
+		for(int i=0;i<s_size;i++)
+		{
+			s.push(a[i]);
+		}	
+		
+		int i=a.length-1;
+		while(i>=0)
+		{
+			if(a[i]!=(Character)s.pop())
+				return false;	
+			else 
+				i--;		
+		}		
+		return true;
 	}
 
 	//Palindrom using stack
