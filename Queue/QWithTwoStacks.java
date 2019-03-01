@@ -39,6 +39,8 @@ class Queue
 		stack1.push(x);	
 	}
 
+	// Push all the lements of stack1 in stack2 and then pop from stack2 ...this is the element to be dequeued..after that again 			push all the elements in stack1
+
 	public int deq() throws QueueEmptyException
 	{
 		if(stack1.isEmpty())
