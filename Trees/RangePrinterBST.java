@@ -64,31 +64,5 @@ public class RangePrinterBST
 		if(root.data>=a)
 			rangePrinterRec(root.right,a,b);	
 	}
-
-	public static void rangePrinterQ(BinaryTreeNode root,int a,int b)
-	{
-		if(root == null)
-			return;
-		
-		FixedSizeCircularArrayQueue q=new FixedSizeCircularArrayQueue(20); 
-		
-		q.enQueue(root);
-
-		while(!q.isEmpty())
-		{
-			BinaryTreeNode temp=q.dequeue();
-			
-			if(temp.data>=a && temp.data<=b)
-				System.out.print(temp.data+" ");
-			if(temp.left!=null && temp.data>=a)
-				q.enQueue(temp.left);
-			if(temp.right!=null && temp.data<=b)
-				q.enQueue(temp.right);
-			//q.dequeue();
-		}
-
-	}
-
-
 	
 }
