@@ -20,11 +20,6 @@ public class RangePrinterBST
 		System.out.println("<<<<<<<<Range Printer with LCA >>>>>");
 		rangePrinter(3,12);
 
-		System.out.println("<<<<Range Printer with REcursion>>>>>>>>>>");
-		rangePrinterRec(bst.root,3,12);
-
-		System.out.println("<<<<<<Range Printer with Q>>>>>>");
-		rangePrinterQ(bst.root,3,12);
 	}
 
 	// given a BST ..print all elements between nodes k1 and k2
@@ -51,18 +46,5 @@ public class RangePrinterBST
 				stack.push(temp.left );
 		}
 		System.out.println();	
-	}
-
-	public  static void rangePrinterRec(BinaryTreeNode root,int a,int b)
-	{
-		if(root == null)
-			return;
-		if(root.data<=b)
-			rangePrinterRec(root.left,a,b);
-		if(root.data >=a && root.data<=b)
-			System.out.print(root.data + " ");
-		if(root.data>=a)
-			rangePrinterRec(root.right,a,b);	
-	}
-	
+	}	
 }
