@@ -16,8 +16,15 @@ public class RangePrinterBST
 		bst.insert(14);
 		bst.insert(17);
 		
+
+		System.out.println("<<<<<<<<Range Printer with LCA >>>>>");
 		rangePrinter(3,12);
 
+		System.out.println("<<<<Range Printer with REcursion>>>>>>>>>>");
+		rangePrinterRec(bst.root,3,12);
+
+		System.out.println("<<<<<<Range Printer with Q>>>>>>");
+		rangePrinterQ(bst.root,3,12);
 	}
 
 	// given a BST ..print all elements between nodes k1 and k2
@@ -45,4 +52,43 @@ public class RangePrinterBST
 		}
 		System.out.println();	
 	}
+
+	public  static void rangePrinterRec(BinaryTreeNode root,int a,int b)
+	{
+		if(root == null)
+			return;
+		if(root.data<=b)
+			rangePrinterRec(root.left,a,b);
+		if(root.data >=a && root.data<=b)
+			System.out.print(root.data + " ");
+		if(root.data>=a)
+			rangePrinterRec(root.right,a,b);	
+	}
+
+	public static void rangePrinterQ(BinaryTreeNode root,int a,int b)
+	{
+		if(root == null)
+			return;
+		
+		FixedSizeCircularArrayQueue q=new FixedSizeCircularArrayQueue(20); 
+		
+		q.enQueue(root);
+
+		while(!q.isEmpty())
+		{
+			BinaryTreeNode temp=q.dequeue();
+			
+			if(temp.data>=a && temp.data<=b)
+				System.out.print(temp.data+" ");
+			if(temp.left!=null && temp.data>=a)
+				q.enQueue(temp.left);
+			if(temp.right!=null && temp.data<=b)
+				q.enQueue(temp.right);
+			//q.dequeue();
+		}
+
+	}
+
+
+	
 }
