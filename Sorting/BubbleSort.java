@@ -1,6 +1,7 @@
 // Worst time complexity=O(n^2)
 // Inplace sorting
 //Can check if the list is already sorted in O(n) time.- only advantage that bubble sort has over others.
+// Stable sorting Alog
 
 
 public class BubbleSort
