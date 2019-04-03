@@ -118,6 +118,19 @@ public class SinglyLinkedList
 		
 	}
 
+	public ListNode search(int key)
+	{
+		if(head.data==key)
+			return head;
+
+		ListNode currnode=head;
+
+		while(currnode!=null && currnode.data!=key)
+			currnode=currnode.next;
+
+		return currnode;
+	}
+
 	public int getPosition(int data)
 	{
 		ListNode currnode=head;
