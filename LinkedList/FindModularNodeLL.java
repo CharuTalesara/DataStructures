@@ -30,6 +30,28 @@ public class FindModularNodeLL
 		System.out.println("N : "+sll.getLength()+" k : 4 "+"Node data : "+modularNode(sll.head,sll.getLength(),4).data);
 
 		System.out.println("N : "+sll.getLength()+" k : 5 "+"Node data : "+modularNode(sll.head,sll.getLength(),5).data);
+
+		System.out.println("N : "+sll.getLength()+" k : 3 "+"Node data : "+modularNode(sll.head,3).data);
+	}
+
+	public static ListNode modularNode(ListNode head,int k)
+	{
+		if(k<=0)
+			return null;
+
+		ListNode node=head;
+		int i=1;
+
+		while(head!=null)
+		{
+			if(i%k==0)
+			{
+				node=head;
+			}
+			head=head.next;
+			i++;
+		}
+		return node;
 	}
 
 	public static ListNode modularNode(ListNode head,int n,int k)
