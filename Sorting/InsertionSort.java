@@ -5,6 +5,11 @@ Comparison based Sorting
 Time Complexity-O(n^2)
 Inplace 
 Stable
+
+Practically more efficient than selection and bubble sort though all of them has O(n^2) complexity
+Good for small files
+can sort online
+adaptive- if the list is already sorted then takes O(n)
 */
 
 
