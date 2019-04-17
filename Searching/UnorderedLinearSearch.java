@@ -15,18 +15,18 @@ public class UnorderedLinearSearch
 		System.out.println("Enter the number u wanna search");
 		int key=sc.nextInt();
 		
-		System.out.println("Key in array : "+search(a,key));
+		System.out.println("Index of Key in array : "+search(a,key));
 		
 	}
 
-	public static boolean search(int[] a,int key)
+	public static int search(int[] a,int key)
 	{
 		for(int i=0;i<a.length;i++)
 		{
 			if(a[i]==key)
-				return true;
+				return i;
 		}
-		return false;
+		return -1;
 	}
 
 	public static void printArray(int[] a)
