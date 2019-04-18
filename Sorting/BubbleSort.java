@@ -1,18 +1,16 @@
 // Worst time complexity=O(n^2)
 // Inplace sorting
+// The number of swaps gives the number of inversions in the array 
 //Can check if the list is already sorted in O(n) time.- only advantage that bubble sort has over others.
-// Stable sorting Alog
 
 
 public class BubbleSort
 {
 	public static void main(String args[])
 	{
-		int[] a={5,3,1,6,7,2,8,4};
+		//int[] a={5,3,1,6,7,2,8,4};
+		int[] a={2,3,8,6,1};
 		print(a,a.length);
-		bubbleSortAlgo(a,a.length);
-		print(a,a.length);
-
 		bubbleSortAlgo(a,a.length);
 		print(a,a.length);
 
