@@ -36,6 +36,10 @@ public class HeapImplement
 
 		int b[]={4,1,3,2,16,9,10,14,8,7};
 
-		heap.build_max_heap(b);
+		//heap.build_max_heap(b);
+
+		System.out.println("Sorting");
+
+		heap.heapSort(b);
 	}
 }

@@ -62,6 +62,7 @@ public class Heap
 			return rc;				
 	}
 	
+	
 
 	public int getMax()
 	{
@@ -127,6 +128,28 @@ public class Heap
 		max_heapify(0);
 
 		return ret;
+	}
+
+	public void heapSort(int[] a)
+	{
+		//this.array=a;
+		this.count=a.length;
+
+		build_max_heap(a);
+
+		while(count>0)
+		{
+			int max=array[0];
+			array[0]=array[count-1];
+			array[count-1]=max;
+			count--;
+			max_heapify(0);
+		}
+		
+		for(int i=0;i<array.length;i++)
+			System.out.print(array[i]+" ");
+		System.out.println();
+	
 	}
 
 	
