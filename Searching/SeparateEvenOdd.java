@@ -19,6 +19,12 @@ public class SeparateEvenOdd
 		print(b);
 		segregateUsingQuickSort(b);
 		print(b);
+
+
+		int[] c={0,1,0,1,0,0,0,1,1,0,1};
+		print(c);
+		segregateUsingQuickSort(c);
+		print(c);
 	}
 	
 	//O(n)
