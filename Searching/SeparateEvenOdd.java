@@ -14,6 +14,11 @@ public class SeparateEvenOdd
 		print(a);
 		segregate(a);
 		print(a);
+
+		int[] b={12,34,45,9,8,90,3};
+		print(b);
+		segregateUsingQuickSort(b);
+		print(b);
 	}
 	
 	//O(n)
@@ -45,6 +50,24 @@ public class SeparateEvenOdd
 				
 			}
 			i++;
+		}
+	}
+
+
+	public static void segregateUsingQuickSort(int[] a)
+	{
+		int i=-1;
+		int j=0;
+
+		for(;j<a.length;j++)
+		{
+			if(a[j]%2==0)
+			{
+				i++;
+				int temp=a[i];
+				a[i]=a[j];
+				a[j]=temp;
+			}
 		}
 	}
 
