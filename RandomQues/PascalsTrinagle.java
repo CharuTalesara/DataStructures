@@ -6,19 +6,16 @@ public class PascalsTrinagle
 {
 	public static void main(String args[])
 	{
-		int[][] a=new int[6][11];
-
-		triangle(a);
+		int[][] a=triangle(17,35);
 
 		print(a);
 	}
 
 	// Time Complexity-O(n2)..=space complexity
 
-	public static void triangle(int[][] a)
+	public static int[][] triangle(int row_count,int  col_count)
 	{
-		int row_count=a.length;
-		int col_count=a[0].length;
+		int[][] a=new int[row_count][col_count];
 
 		a[0][col_count/2]=1;
 
@@ -38,6 +35,7 @@ public class PascalsTrinagle
 				a[i][j]=a1+b1;
 			}
 		}
+		return a;
 	}
 
 	public static void print(int[][] a)
