@@ -6,22 +6,25 @@ public class ElementsLessThanK
 	{
 		int b[]={4,1,3,2,16,9,10,14,8,7};
 
-		Heap heap=new Heap();
+		MinHeap heap=new MinHeap();
 
-		heap=heap.build_max_heap(b);
+		heap=heap.build_min_heap(b);
+		heap.printHeap();
 
-		eleLessThankK(heap,0,9);
+		eleLessThankK(heap,0,4);
 
 	}
 
-	public static void eleLessThankK(Heap heap,int i,int k)
+	public static void eleLessThankK(MinHeap heap,int i,int k)
 	{
 		if(i<0)
 			return;
 	
 		if(heap.array[i]<k)
+		{
 			System.out.print(heap.array[i]+" ");
-		eleLessThankK(heap,heap.leftChild(i),k);
-		eleLessThankK(heap,heap.rightChild(i),k);
+			eleLessThankK(heap,heap.leftChild(i),k);
+			eleLessThankK(heap,heap.rightChild(i),k);
+		}
 	}
 }
