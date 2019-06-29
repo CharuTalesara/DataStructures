@@ -1,5 +1,5 @@
 
-// Given an unoredered list ..remove duplicates in it
+// Given an oredered list ..remove duplicates in it
 
 public class RemoveDuplicates
 {
