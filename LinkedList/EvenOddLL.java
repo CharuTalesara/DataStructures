@@ -24,9 +24,60 @@ public class EvenOddLL
 
 		sll.print();
 
-		evenodd(sll.head);		
+		evenodd1(sll.head);		
 
 		sll.print();
+
+	}
+
+
+	public static ListNode evenodd1(ListNode head)
+	{
+		if(head==null || head.next==null)
+			return head;	
+		
+		ListNode currnode=head.next;
+		
+		ListNode fo=null;
+		ListNode currprev=head;
+		ListNode le=null;		
+
+		if(head.data%2==1)
+			fo=head; //fo=first odd;	
+		else 
+			le=head; //le=last even
+
+		while(currnode!=null)
+		{
+			if(currnode.data%2==1)
+			{
+				if(fo==null)
+					fo=currnode;
+				currprev=currnode;
+				currnode=currnode.next;
+			}
+
+			else
+			{
+				if(le==null)
+					le=currnode;
+	
+				ListNode temp=currnode.next;
+
+				le.next=currnode;
+				currprev.next=currnode.next;
+
+				if(fo!=null)
+					currnode.next=fo;
+				le=currnode;
+				currnode=temp;			
+			}
+
+		}
+
+		return head;
+	
+
 
 	}
 
