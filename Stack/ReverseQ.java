@@ -20,28 +20,26 @@ public class ReverseQ
 
 		q.printQ();
 		reverseQueue(q);
+		q.printQ();
 		
 	}
 
-	public static void reverseQueue(FixedSizeCircularArrayQueue q)
+	public static FixedSizeCircularArrayQueue reverseQueue(FixedSizeCircularArrayQueue q)
 	{
 		ArrayStack stack=new ArrayStack();
-		System.out.println("<<<<<Prining Stack>>>>");
-		
-		int i=0;
 
-		while(i<q.size())
+		while(!q.isEmpty())
 		{
 			int ele=q.dequeue();
 			stack.push(ele);
-			q.enQueue(ele);
-			i++;
-		}		
+		}
 
 		while(!stack.isEmpty())
 		{
-			System.out.print(Integer.parseInt(stack.pop().toString())+" ");
-		}
-		System.out.println();
+			int x=(int)stack.pop();
+			q.enQueue(x);	
+		}		
+	
+		return q;
 	}
 }
