@@ -10,8 +10,40 @@ public class StackSort
 		stack.push(5);
 		stack.push(2);
 		stack.printStack();
-		sort(stack).printStack();
+		//sort(stack).printStack();
+		sortAsce(stack).printStack();
 	}
+
+	public static ArrayStack sortAsce(ArrayStack stack)
+	{
+		ArrayStack revstack=new ArrayStack(stack.size());
+		
+		while(!stack.isEmpty())
+		{
+			if(revstack.isEmpty())
+				revstack.push(stack.pop());
+			else
+			{
+				if(((Integer)stack.top()).intValue()>((Integer)revstack.top()).intValue())
+				{
+					revstack.push(stack.pop());					
+				}
+				else
+				{
+					int x=((Integer)stack.pop()).intValue();
+					while( !revstack.isEmpty() && ((Integer)revstack.top()).intValue()>x)
+					{
+						stack.push(revstack.pop());
+					}
+					revstack.push(x);
+				}
+			}
+		}
+
+		return revstack;
+	}
+
+
 
 	//Time Complexity-O(n^2)
 
@@ -41,4 +73,6 @@ public class StackSort
 
 		return revstack;
 	}
+
+
 }
