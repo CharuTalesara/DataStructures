@@ -1,6 +1,7 @@
 /*
 
-Given 2 LLs representing two non negative numbers.The digits are stored in reverse order and each of their nodes contains a single digit. Add the two numbers and return that as a linked list.
+Given 2 LLs representing two non negative numbers.The digits are stored in reverse order
+and each of their nodes contains a single digit. Add the two numbers and return that as a linked list.
 
 For eg- 3->4->3 + 5->6->4 => 8->0->8
 
