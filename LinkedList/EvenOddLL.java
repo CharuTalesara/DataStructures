@@ -1,6 +1,7 @@
 
 /*
-Given a linked list with even and odd numbers, create an algorithm for making changes to the list in such a way that all even numbers appear at the beginning.
+Given a linked list with even and odd numbers, create an algorithm for making changes to the list in such
+a way that all even numbers appear at the beginning.
 
 */
 
