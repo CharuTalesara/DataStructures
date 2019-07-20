@@ -59,5 +59,6 @@ public class BTHeightWithQ
 				nodeCount--;
 			}
 		}
+		return height;
 	}
 }
