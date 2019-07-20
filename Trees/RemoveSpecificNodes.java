@@ -18,13 +18,18 @@ public class RemoveSpecificNodes
 		bst.insert(14);
 		bst.insert(13);
 		bst.insert(17);
+		bst.insert(19);
+		bst.insert(18);
+		bst.insert(21);
+		bst.insert(20);
+		bst.insert(32);
 		
 
 		bst.inorder(bst.root);
 		System.out.println();
 
 
-		removeNodesWithOnechild(bst.root);
+		removeNodesWithOnechild_1(bst.root);
 		bst.inorder(bst.root);
 		System.out.println();
 		
@@ -42,6 +47,28 @@ public class RemoveSpecificNodes
 			{
 				x.left=removeLeaves(x.left);
 				x.right=removeLeaves(x.right);
+			}
+		}
+
+		return x;
+	}
+
+	public static BinaryTreeNode removeNodesWithOnechild_1(BinaryTreeNode x)
+	{
+		if(x!=null)
+		{
+			if(x.left==null && x.right!=null)
+			{
+				return x.right;
+			}
+			else if(x.left!=null && x.right==null)
+			{
+				return x.left;
+			} 
+			else
+			{
+				x.left=removeNodesWithOnechild_1(x.left);
+				x.right=removeNodesWithOnechild_1(x.right);
 			}
 		}
 
