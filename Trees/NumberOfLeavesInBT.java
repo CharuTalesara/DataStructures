@@ -21,7 +21,18 @@ public class NumberOfLeavesInBT
 		bt.preorder(bt.root);
 		System.out.println();
 
+		System.out.println("Leaves Count : "+leavesCountRec(bt.root));
 		System.out.println("Leaves Count : "+leavesCount(bt.root));
+	}
+
+	public static int leavesCountRec(BinaryTreeNode root)
+	{
+		if(root==null)
+			return 0;
+		if(root.right==null && root.left ==null)
+			return 1;
+		else
+			return leavesCountRec(root.right)+leavesCountRec(root.left);
 	}
 
 	public static int leavesCount(BinaryTreeNode root)
