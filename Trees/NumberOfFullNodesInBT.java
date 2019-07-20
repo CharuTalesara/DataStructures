@@ -21,7 +21,20 @@ public class NumberOfFullNodesInBT
 		bt.preorder(bt.root);
 		System.out.println();
 
-		System.out.println("Full Nodes Count : "+fullNodesCount(bt.root));
+		System.out.println("Full Nodes Count : "+fullNodesCount_Rec(bt.root));
+	}
+
+	public static int fullNodesCount_Rec(BinaryTreeNode root)
+	{
+		if(root==null)
+			return 0;
+		if(root.left!=null && root.right!=null)
+			return 1+fullNodesCount_Rec(root.right)+fullNodesCount_Rec(root.left);
+		else if(root.right!=null)
+			return fullNodesCount_Rec(root.right);
+		else
+			return fullNodesCount_Rec(root.left);
+			
 	}
 
 	public static int fullNodesCount(BinaryTreeNode root)
