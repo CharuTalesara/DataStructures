@@ -20,11 +20,22 @@ public class SumBT
 		bt.insert(11);
 		bt.insert(12);
 		bt.insert(13);
-		//bt.insert(14);
+		bt.insert(14);
 		bt.preorder(bt.root);
 		System.out.println();
 		System.out.println("Sum : "+sumbt(bt.root));
 	}
+
+	public static int sumbt1(BinaryTreeNode x)
+	{
+
+		if(x==null)
+			return 0;
+		else
+			return x.data+sumbt1(x.left)+sumbt1(x.right);
+		
+	}
+
 
 	public static int sumbt(BinaryTreeNode x)
 	{
