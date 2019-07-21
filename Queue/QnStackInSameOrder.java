@@ -1,5 +1,6 @@
 /*
-Given a queue Q containing  n elements, transfer these items on the stack s(initially empty) so that the front element of the q appears on the top of the stack
+Given a queue Q containing  n elements, transfer these items on the stack s(initially empty) 
+so that the front element of the q appears on the top of the stack
 */
 
 public class QnStackInSameOrder
