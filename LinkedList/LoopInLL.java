@@ -25,6 +25,7 @@ public class LoopInLL
 		//System.out.println(sll.search(9).next.data);
 		System.out.println(loopStartingNode(sll.head).data);
 		System.out.println(Looplength(sll.head));
+		System.out.println(listLength(sll.head));
 		
 	}
 	
@@ -104,4 +105,21 @@ public class LoopInLL
 		
 		return slwptr;
 	}
+	
+	public static int listLength(ListNode head)
+	{
+		int count = Looplength(head);
+		
+		ListNode loopstart=loopStartingNode(head);
+		
+		ListNode currnode=head;
+		
+		while(currnode!=loopstart)
+		{
+			count++;
+			currnode=currnode.next;
+		}
+		return count;
+	}
+	
 }
